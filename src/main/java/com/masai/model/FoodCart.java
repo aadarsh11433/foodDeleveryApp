@@ -20,17 +20,14 @@ import lombok.ToString;
 @ToString
 @Service
 @Entity
-public class Item {
+public class FoodCart {
 
 	@Id
-	private int itemId;
-	private String itemName;
-	private double cost;
-	private int quantity; 
+	private int cartId;
 	
 	@OneToOne
-	private Category category;
+	private Customer customer;
 	
 	@OneToMany
-	private List<Restaurant> restros;
+	private List<Item> itemList;
 }

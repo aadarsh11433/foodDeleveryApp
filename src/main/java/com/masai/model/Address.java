@@ -1,10 +1,7 @@
 package com.masai.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Service;
@@ -20,17 +17,22 @@ import lombok.ToString;
 @ToString
 @Service
 @Entity
-public class Item {
+public class Address {
 
 	@Id
-	private int itemId;
-	private String itemName;
-	private double cost;
-	private int quantity; 
+	private int addressID;
+	private String buildingName;
+	private String street;
+	private String area;
+	private String city;
+	private String state;
+	private String country;
+	private String pincode;
 	
 	@OneToOne
-	private Category category;
+	private Restaurant restaurant;
 	
-	@OneToMany
-	private List<Restaurant> restros;
+	@OneToOne
+	private Customer customer;
+	
 }

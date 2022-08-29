@@ -1,10 +1,10 @@
 package com.masai.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Service;
@@ -20,17 +20,14 @@ import lombok.ToString;
 @ToString
 @Service
 @Entity
-public class Item {
+public class OrderDetails {
 
 	@Id
-	private int itemId;
-	private String itemName;
-	private double cost;
-	private int quantity; 
+	private int orderId;
+	private LocalDateTime time;
+	private String status;
 	
 	@OneToOne
-	private Category category;
+	private FoodCart cart;
 	
-	@OneToMany
-	private List<Restaurant> restros;
 }
